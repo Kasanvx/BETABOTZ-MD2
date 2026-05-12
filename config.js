@@ -7,14 +7,14 @@ const fs = require('fs')
 const chalk = require('chalk')
 
 // ===== PAYMENT & LAYANAN ===== //
-global.cash = 'cashify_a880b731e8d106c0f0ce8b4a8885ae9d92d57babd2d252d1eba0d4e0e693667b'
-global.qris_id = 'f480f37b-1e13-4647-800e-fbd89a15b0da'
-global.rumahotp = 'otp_BlrWaiQuiGGInZCB'
+global.cash = ''
+global.qris_id = ''
+global.rumahotp = ''
 global.shopee = {
-  apikey: '2c103541a5b66bb7342b876aff36d49fa87ba581e9e7a361d808fb2dbd0b10a5'
+  apikey: ''
 }
 global.btzpay = {
-  apikey: '2654ebf859c36df043c2a398d96f6f4669a13617b05547b3255b806438541940'
+  apikey: ''
 }
 
 // ===== OWNER & ROLE ===== //
@@ -33,7 +33,7 @@ global.gcId = '120363023958940214@g.us'
 global.instagram = 'https://instagram.com/shanv.konv'
 
 // ===== BOT INFO ===== //
-global.ruangotp = '787d59c7-86f0-4716-9d0e-9eeecc7d7eb8'
+global.ruangotp = ''
 global.wm = '© Saxia Botz'
 global.packname = 'Dibuat Oleh'
 global.author = '© Saxia.js'
@@ -49,7 +49,7 @@ global.maxwarn = 2 // maksimal peringatan (number)
 global.antiporn = true
 
 // ===== API BETABOTZ (WAJIB DIISI) ===== //
-global.lann = 'Kasan.7'
+global.lann = ''
 global.aksesKey = '' // isi kalau sudah register
 
 global.APIs = {
