@@ -1,59 +1,70 @@
-require("dotenv").config();
+/**
+ * Saxia Botz Configuration
+ * Author: Kasan
+ */
 
-global.owner = ["6281289694906"]; // wajib di isi tidak boleh kosong
-global.mods = ["6281289694906"]; // wajib di isi tidak boleh kosong
-global.prems = ["6281289694906"]; // wajib di isi tidak boleh kosong
-global.nameowner = "LANN"; // wajib di isi tidak boleh kosong
-global.numberowner = "6281289694906"; // wajib di isi tidak boleh kosong
-global.mail = "danaputra10012@gmail.com"; // wajib di isi tidak boleh kosong
-global.gc = "https://chat.whatsapp.com/I5RpePh2b5u37OyFjzCNTr"; // wajib di isi tidak boleh kosong
-global.instagram = "https://www.instagram.com/dana_putra13/"; // wajib di isi tidak boleh kosong
-global.wm = "© BETABOTZ"; // isi nama bot atau nama kalian
-global.wait = "_*Tunggu sedang di proses...*_"; // ini pesan simulasi loading
-global.eror = "_*Server Error*_"; // ini pesan saat terjadi kesalahan
-global.stiker_wait = "*⫹⫺ Stiker sedang dibuat...*"; // ini pesan simulasi saat loading pembuatan sticker
-global.packname = "Made With"; // watermark stikcker packname
-global.author = "Bot WhatsApp"; // watermark stikcker author
-global.maxwarn = "3"; // Peringatan maksimum Warn
-global.groupLapor = "120363216901617825@g.us"; // grub dimana bot mengirim laporan error dari user
+const fs = require('fs')
+const chalk = require('chalk')
 
-global.autobio = false; // Set true/false untuk mengaktifkan atau mematikan autobio (default: false)
-global.antiporn = false; // Set true/false untuk Auto delete pesan porno (bot harus admin) (default: false)
-global.spam = false; // Set true/false untuk anti spam (default: false)
-global.gcspam = false; // Set true/false untuk menutup grup ketika spam (default: false)
+// ===== PAYMENT & LAYANAN ===== //
+global.cash = 'cashify_a880b731e8d106c0f0ce8b4a8885ae9d92d57babd2d252d1eba0d4e0e693667b'
+global.qris_id = 'f480f37b-1e13-4647-800e-fbd89a15b0da'
+global.rumahotp = 'otp_BlrWaiQuiGGInZCB'
+global.shopee = {
+  apikey: '2c103541a5b66bb7342b876aff36d49fa87ba581e9e7a361d808fb2dbd0b10a5'
+}
+global.btzpay = {
+  apikey: '2654ebf859c36df043c2a398d96f6f4669a13617b05547b3255b806438541940'
+}
 
-
-// Prefix dari bot
+// ===== OWNER & ROLE ===== //
+global.owner = ['6287767510608']
+global.mods = ['6287767510608']
 global.prefix = './#'
+global.prems = ['6287767510608']
 
-// APIKEY INI WAJIB DI ISI! //
-global.lann = "";
-// global.lann = process.env.API_KEY_BETABOTZ;
-// aktifkan akses .env di atas jika kamu ingin menaruh key api di .env
-// Daftar terlebih dahulu https://api.betabotz.eu.org
+global.nameowner = 'Sn'
+global.numberowner = '6287767510608'
+global.mail = 'support@saxiabotz.web.id'
 
-// AKSESKEY INI DI ISI JIKA DIPERLUKAN (e.g suno ai (ai music ) & fitur prem lainnya//
-global.aksesKey = "";
-// global.aksesKey = process.env.API_KEY_BETABOTZ_AKSESKEY;
-// aktifkan akses .env di atas jika kamu ingin menaruh key api di .env
-// Daftar terlebih dahulu https://api.betabotz.eu.org
+// ===== SOCIAL ===== //
+global.gc = 'https://chat.whatsapp.com/LknsianRgX9KVNtyTChwZc?mode=gi_t' // isi link grup kalau ada
+global.gcId = '120363023958940214@g.us'
+global.instagram = 'https://instagram.com/shanv.konv'
 
-// Tidak boleh diganti atau di ubah
+// ===== BOT INFO ===== //
+global.ruangotp = '787d59c7-86f0-4716-9d0e-9eeecc7d7eb8'
+global.wm = '© Saxia Botz'
+global.packname = 'Dibuat Oleh'
+global.author = '© Saxia.js'
+
+// ===== MESSAGE ===== //
+global.wait = '_*Tunggu sedang diproses...*_'
+global.eror = '_*Server Error*_'
+global.stiker_wait = '*⫹⫺ Stiker sedang dibuat...*'
+
+// ===== SYSTEM ===== //
+global.dailyLimit = 30 // Limit harian
+global.maxwarn = 2 // maksimal peringatan (number)
+global.antiporn = true
+
+// ===== API BETABOTZ (WAJIB DIISI) ===== //
+global.lann = 'Kasan.7'
+global.aksesKey = '' // isi kalau sudah register
+
 global.APIs = {
-  lann: "https://api.betabotz.eu.org",
-};
+  lann: 'https://api.betabotz.eu.org'
+}
 
-//Tidak boleh diganti atau di ubah
 global.APIKeys = {
-  "https://api.betabotz.eu.org": global.lann,
-};
+  'https://api.betabotz.eu.org': global.lann
+}
 
-let fs = require("fs");
-let chalk = require("chalk");
-let file = require.resolve(__filename);
+// ===== AUTO RELOAD CONFIG ===== //
+let file = require.resolve(__filename)
 fs.watchFile(file, () => {
-  fs.unwatchFile(file);
-  console.log(chalk.redBright("Update 'config.js'"));
-  delete require.cache[file];
-  require(file);
-});
+  fs.unwatchFile(file)
+  console.log(chalk.redBright("Update 'config.js' detected"))
+  delete require.cache[file]
+  require(file)
+})
